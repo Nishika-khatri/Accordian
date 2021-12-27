@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    padding: 40px;
+    background-color: blueviolet;
+    align-items: center;
+    justify-content: center;
+}
+.accordian{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    padding: 45px 90px 45px 60px;
+    min-width: 360px;
+    width: 100%;
+}
+
+.accordian .image-box{
+    height: 360px;
+    width: 300px;
+}
+.accordian .image-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    min-width: 200px;
+}
+.accordian .accordian-text{
+    width: 60%;
+}
+.accordian .accordian-text .title{
+    font-size: 35px;
+    font-weight: 600;
+    color: blueviolet;
+}
+.accordian .accordian-text .faq-text{
+    margin-top: 25px ;
+    height: 263px;
+    overflow-y: auto;
+}
+.faq-text::-webkit-scrollbar{
+    display: none;
+}
+.accordian .accordian-text li{
+    list-style-type: none;
+    cursor: pointer;
+}
+.accordian-text li .question-arrow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.question-arrow .question{
+    font-size: 18px;
+    font-weight: 500;
+    color:grey;
+    transition: all 0.3s ease;
+}
+.fas.fa-caret-down.arrow{
+    font-size: 20px;
+}
+.accordian-text li .line{
+    display: block;
+    height: 25px;
+    width: 100%;
+    background-color: rgba(0, 0, 0,0.1);
+    margin: 10px 0;
+}
+.accordian-text li:hover .question-arrow .question,
+.accordian-text li:hover .question-arrow .arrow{
+    color: blueviolet;
+}
+.accordian-text li.showanswer .question-arrow .question,
+.accordian-text li.showanswer .question-arrow .arrow{
+    color: blueviolet;
+}
+
+.accordian-text li.showanswer .question-arrow .arrow{
+    transform: rotate(-180deg);
+}
+.accordian-text li p{
+    width: 92%;
+    font-size: 15px;
+    font-weight: 500;
+    color: grey;
+    display: none;
+}
+.accordian-text li.showanswer p{
+    display: block;
+}
+
+@media (max-width: 820px){
+    .accordian{
+        flex-direction: column;
+    }
+    .accordian .accordian-text{
+        width: 100%;
+    }
+    
+}
